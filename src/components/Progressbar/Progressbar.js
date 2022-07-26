@@ -1,12 +1,14 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState, useRef, useEffect, useContext} from 'react'
 import { buildStyles, CircularProgressbar, CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css'
-import { useTimerContext } from '../../context/TimerContext';
+import { TimerContext } from '../../context/TimerContext';
+// import { useTimerContext } from '../../context/TimerContext';
 import './Progressbar.css'
 
 function Progressbar() {
   const [isPaused, setIsPaused] = useState(true)
-  const { mode} = useTimerContext()
+  // const { mode} = useTimerContext()
+  const {mode, setMode} = useContext(TimerContext)
 
   const [minutes, setMinutes] = useState(() => {
     if(mode === 'pomodoro'){
@@ -17,6 +19,10 @@ function Progressbar() {
      return 15
     }
   })
+
+
+
+  console.log(minutes)
   const [seconds, setSeconds] = useState(0)
   const [displayMessage, setDisplayMessage] = useState(false)
 
@@ -72,6 +78,7 @@ function Progressbar() {
       </div>
       <div className='playPauseButtons'>
         <h2 className='textH2'>{mode === 'pomodoro' ? 'Hora de focar!' : 'Hora de uma pausa'}</h2>
+        {mode}
       </div>
     </div>
   )

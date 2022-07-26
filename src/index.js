@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { TimerContextProvider } from './context/TimerContext';
+// import { TimerContextProvider } from './context/TimerContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TimerContextProvider>
+    {/* <TimerContextProvider> */}
       <App /> 
-    </TimerContextProvider>
+    {/* </TimerContextProvider> */}
   </React.StrictMode>
 );
 

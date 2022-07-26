@@ -1,34 +1,36 @@
 import React, {useContext, createContext, useState, useEffect} from "react";
 
-const TimerContext = createContext()
+export const TimerContext = createContext({
+  mode: '',
+  setMode: () => {}
+})
 
-export const TimerContextProvider = ({children}) => {
-  //states
-  const [mode, setMode] = useState('pomodoro')
 
-  const pomodoroMinutes = 25
-  const shortBreakMinutes = 5
-  const longBreakMinutes = 15
 
-  useEffect(() => {
-    console.log(mode)
-  }, [mode])
+// export const TimerContextProvider = ({children}) => {
+//   //states
+//   const [mode, setMode] = useState('pomodoro')
+
+//   const pomodoroMinutes = 25
+//   const shortBreakMinutes = 5
+//   const longBreakMinutes = 15
+
+//   useEffect(() => {
+//     console.log(mode)
+//   }, [mode])
   
 
-  return (
-      <TimerContext.Provider 
-      value={{
-        pomodoroMinutes,
-        shortBreakMinutes,
-        longBreakMinutes,
-        setMode,
-        mode
-      }}>
-      {children}
-      </TimerContext.Provider>
-  )
-}
+//   return (
+//       <TimerContext.Provider 
+//       value={{
+//         setMode,
+//         mode
+//       }}>
+//       {children}
+//       </TimerContext.Provider>
+//   )
+// }
 
-export function useTimerContext(){
-  return useContext(TimerContext)
-}
+// export function useTimerContext(){
+//   return useContext(TimerContext)
+// }
