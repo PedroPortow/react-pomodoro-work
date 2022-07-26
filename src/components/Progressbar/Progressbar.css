@@ -1,0 +1,13 @@
+.wrapperBar{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  /* border: 1px solid pink; */
+}
+
+.textH2{
+  font-weight: 200;
+}
