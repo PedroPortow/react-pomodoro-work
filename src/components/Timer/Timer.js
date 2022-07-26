@@ -1,18 +1,25 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useTimerContext } from '../../context/TimerContext'
 import Button from '../Buttons/Button'
 import Progressbar from '../Progressbar/Progressbar'
 import './Timer.css'
 
 function Timer() {
-  const {mode, dispatch} = useTimerContext()
+  const {mode, setMode} = useTimerContext()
+
+  // const setModeHandler = (type) => {
+  //   console.log('tipo' + ' ' + type)
+  //   setMode(type)
+  // }
+
 
   return (
     <div className="wrapper">
       <div className="buttonsWrapper">
-        <Button text={'Pomodoro'} onClick={() => dispatch({type: 'pomodoro', payload: 'pomodoro'})}/>
-        <Button text={'Pausinha'} onClick={() => dispatch({type: 'sb', payload: 'sb'})}      />
-        <Button text={'Pausão'}   onClick={() => dispatch({type: 'lb', payload: 'lb'})}      />
+        <Button text={'Pomodoro'} onClick={() => setMode('pomodoro')}/>
+        {mode}
+        <Button text={'Pausinha'} onClick={() => setMode('sb')}      />
+        <Button text={'Pausão'}   onClick={() => setMode('lb')}      />
       </div>
       <Progressbar />
     </div>
