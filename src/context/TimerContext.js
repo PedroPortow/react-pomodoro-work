@@ -1,4 +1,4 @@
-import React, {useContext, createContext, useState, useEffect} from "react";
+import {createContext} from "react";
 
 export const TimerContext = createContext({
   mode: '',
